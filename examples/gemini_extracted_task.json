@@ -1,0 +1,90 @@
+{
+  "source": {
+    "kind": "generated",
+    "video": "examples/media/gemini_reference.mp4",
+    "sha256": "0239710608fca52951a0d95a9058aa37766dc481c44ea76483c677af0cb8c609"
+  },
+  "workspace_m": [
+    0.5,
+    0.35
+  ],
+  "corners_px": [
+    [
+      174.13999938964844,
+      89.80000305175781
+    ],
+    [
+      1094.4000244140625,
+      87.33999633789062
+    ],
+    [
+      1150.219970703125,
+      637.8900146484375
+    ],
+    [
+      118.01000213623047,
+      636.1400146484375
+    ]
+  ],
+  "objects": [
+    {
+      "id": "red",
+      "start_m": [
+        0.16126999258995056,
+        0.17073999345302582
+      ],
+      "goal_m": [
+        0.12460000067949295,
+        0.27118998765945435
+      ],
+      "start_px": [
+        460.12,
+        340.55
+      ],
+      "goal_px": [
+        380.67,
+        502.02
+      ]
+    },
+    {
+      "id": "blue",
+      "start_m": [
+        0.3364900052547455,
+        0.16808000206947327
+      ],
+      "goal_m": [
+        0.37977999448776245,
+        0.2708899974822998
+      ],
+      "start_px": [
+        800.47,
+        336.17
+      ],
+      "goal_px": [
+        893.43,
+        501.85
+      ]
+    }
+  ],
+  "dependencies": [],
+  "arm_speed_m_s": 0.15,
+  "handoff_overhead_s": 1.5,
+  "assumptions": [
+    "Planar mapping; no recovered 3D hand trajectory.",
+    "Distinct block moves treated as independent; simultaneity is not proof of independence.",
+    "Workspace dimensions are supplied, not inferred from video.",
+    "Targets are ring centers from the opening frame; final occupancy is a color heuristic."
+  ],
+  "quality": {
+    "red": {
+      "tracking_fraction_confidence_ge_0_5": 0.875,
+      "new_color_pixels_at_goal": 1264,
+      "goal_occupancy_supported": true
+    },
+    "blue": {
+      "tracking_fraction_confidence_ge_0_5": 0.717,
+      "new_color_pixels_at_goal": 933,
+      "goal_occupancy_supported": true
+    }
+  }
+}

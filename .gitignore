@@ -1,0 +1,10 @@
+data/raw/
+data/synthetic/
+data/generated/
+__pycache__/
+.venv/
+*.mp4
+!examples/media/*.mp4
+!docs/media/*.mp4
+outputs/
+assets/menagerie/

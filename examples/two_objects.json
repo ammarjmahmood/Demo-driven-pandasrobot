@@ -1,0 +1,11 @@
+{
+  "source": "synthetic_example_not_personal_data",
+  "workspace_m": [0.50, 0.35],
+  "objects": [
+    {"id": "red", "start_m": [0.10, 0.10], "goal_m": [0.38, 0.12]},
+    {"id": "blue", "start_m": [0.12, 0.27], "goal_m": [0.39, 0.26]}
+  ],
+  "dependencies": [],
+  "handoff_overhead_s": 1.5,
+  "arm_speed_m_s": 0.15
+}

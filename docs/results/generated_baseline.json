@@ -1,0 +1,229 @@
+{
+  "recorded_on": "2026-10-06",
+  "experiment": "Gemini-generated video development baseline",
+  "source_sha256": "0239710608fca52951a0d95a9058aa37766dc481c44ea76483c677af0cb8c609",
+  "provenance": "generated",
+  "workspace_scale_note": "0.50 x 0.35 metres assumed for generated footage, not measured",
+  "task": {
+    "source": {
+      "kind": "generated",
+      "video": "examples/media/gemini_reference.mp4",
+      "sha256": "0239710608fca52951a0d95a9058aa37766dc481c44ea76483c677af0cb8c609"
+    },
+    "workspace_m": [
+      0.5,
+      0.35
+    ],
+    "corners_px": [
+      [
+        174.13999938964844,
+        89.80000305175781
+      ],
+      [
+        1094.4000244140625,
+        87.33999633789062
+      ],
+      [
+        1150.219970703125,
+        637.8900146484375
+      ],
+      [
+        118.01000213623047,
+        636.1400146484375
+      ]
+    ],
+    "objects": [
+      {
+        "id": "red",
+        "start_m": [
+          0.16126999258995056,
+          0.17073999345302582
+        ],
+        "goal_m": [
+          0.12460000067949295,
+          0.27118998765945435
+        ],
+        "start_px": [
+          460.12,
+          340.55
+        ],
+        "goal_px": [
+          380.67,
+          502.02
+        ]
+      },
+      {
+        "id": "blue",
+        "start_m": [
+          0.3364900052547455,
+          0.16808000206947327
+        ],
+        "goal_m": [
+          0.37977999448776245,
+          0.2708899974822998
+        ],
+        "start_px": [
+          800.47,
+          336.17
+        ],
+        "goal_px": [
+          893.43,
+          501.85
+        ]
+      }
+    ],
+    "dependencies": [],
+    "arm_speed_m_s": 0.15,
+    "handoff_overhead_s": 1.5,
+    "assumptions": [
+      "Planar mapping; no recovered 3D hand trajectory.",
+      "Distinct block moves treated as independent; simultaneity is not proof of independence.",
+      "Workspace dimensions are supplied, not inferred from video.",
+      "Targets are ring centers from the opening frame; final occupancy is a color heuristic."
+    ],
+    "quality": {
+      "red": {
+        "tracking_fraction_confidence_ge_0_5": 0.875,
+        "new_color_pixels_at_goal": 1264,
+        "goal_occupancy_supported": true
+      },
+      "blue": {
+        "tracking_fraction_confidence_ge_0_5": 0.717,
+        "new_color_pixels_at_goal": 933,
+        "goal_occupancy_supported": true
+      }
+    }
+  },
+  "baseline": {
+    "input_provenance": "generated",
+    "chosen_arms": 2,
+    "results": [
+      {
+        "arms": 1,
+        "success": true,
+        "placement_success": true,
+        "simulated_seconds": 19.6,
+        "objects": {
+          "red": {
+            "position_m": [
+              0.5709875108610624,
+              -0.12595018432991917,
+              0.01989224457978382
+            ],
+            "goal_error_m": 0.00059,
+            "max_height_m": 0.19076,
+            "success": true
+          },
+          "blue": {
+            "position_m": [
+              0.5707104057341592,
+              0.12968254612404964,
+              0.01989224457978382
+            ],
+            "goal_error_m": 0.0002,
+            "max_height_m": 0.19246,
+            "success": true
+          }
+        },
+        "interarm_contact_pairs": [],
+        "nonbase_robot_table_contact_pairs": []
+      },
+      {
+        "arms": 2,
+        "success": true,
+        "placement_success": true,
+        "simulated_seconds": 10.2,
+        "objects": {
+          "red": {
+            "position_m": [
+              0.5709638141963981,
+              -0.12490652811160399,
+              0.019892244579783815
+            ],
+            "goal_error_m": 0.00054,
+            "max_height_m": 0.18767,
+            "success": true
+          },
+          "blue": {
+            "position_m": [
+              0.570709701116323,
+              0.12948337043933952,
+              0.01989224457978379
+            ],
+            "goal_error_m": 0.00035,
+            "max_height_m": 0.18874,
+            "success": true
+          }
+        },
+        "interarm_contact_pairs": [],
+        "nonbase_robot_table_contact_pairs": []
+      }
+    ],
+    "limitations": [
+      "Single scene, scripted controller, no learned policy.",
+      "Controller uses simulator object state.",
+      "Generated footage is development input, not applicant-collected data.",
+      "Planar calibration, fixed 4cm blocks and supplied workspace dimensions.",
+      "Path clearance is a heuristic; actual robot contact is checked during the rollout."
+    ]
+  },
+  "perturbation_check": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "coordinate_jitter_m": 0.01,
+    "results": [
+      {
+        "seed": 0,
+        "arms": 1,
+        "success": true,
+        "max_goal_error_m": 0.00058,
+        "interarm_contacts": 0,
+        "table_contacts": 0
+      },
+      {
+        "seed": 0,
+        "arms": 2,
+        "success": true,
+        "max_goal_error_m": 0.00052,
+        "interarm_contacts": 0,
+        "table_contacts": 0
+      },
+      {
+        "seed": 1,
+        "arms": 1,
+        "success": true,
+        "max_goal_error_m": 0.00043,
+        "interarm_contacts": 0,
+        "table_contacts": 0
+      },
+      {
+        "seed": 1,
+        "arms": 2,
+        "success": true,
+        "max_goal_error_m": 0.00048,
+        "interarm_contacts": 0,
+        "table_contacts": 0
+      },
+      {
+        "seed": 2,
+        "arms": 1,
+        "success": true,
+        "max_goal_error_m": 0.00054,
+        "interarm_contacts": 0,
+        "table_contacts": 0
+      },
+      {
+        "seed": 2,
+        "arms": 2,
+        "success": true,
+        "max_goal_error_m": 0.00055,
+        "interarm_contacts": 0,
+        "table_contacts": 0
+      }
+    ]
+  },
+  "scope": "Single generated source scene; scripted controller with privileged simulation state. Personal footage pending."
+}
